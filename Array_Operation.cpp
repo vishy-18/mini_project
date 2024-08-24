@@ -30,6 +30,7 @@ class arr
         a[pos-1]=data;
 
         n++;
+        cout<<"\nInserted Successfully.....\n";
     }
 
     void Deletion()
@@ -43,6 +44,7 @@ class arr
             a[i]=a[i+1];
         }
         n--;
+        cout<<"\nDeleted Successfully.....\n";
     }
 
     void Search()
@@ -58,12 +60,12 @@ class arr
             if(a[i]==s)
             {
                 flag=true;
-                cout<<"\nElement Found At Index : "<<i;
+                cout<<"\nElement Found At Index : "<<i<<"\n";
                 break;
             }
         }
 
-        cout<<"\nElement Not Found.....";
+        cout<<"\nElement Not Found.....\n";
 
     }
 
@@ -81,6 +83,7 @@ class arr
                 }
             }
         }
+        cout<<"\nSorted Successfully.....\n";
     }
 
     void Display()
@@ -91,6 +94,16 @@ class arr
             cout<<a[i]<<"\n";
         }
     }
+    
+    void Size()
+    {
+        cout<<"\nSize of the Array : "<<sizeof(a)<<"\n";
+    }
+    
+    void Capacity()
+    {
+        cout<<"\nLength of the Array : "<<sizeof(a)/sizeof(a[0])<<"\n";
+    }
 };
 
 int main()
@@ -100,9 +113,9 @@ int main()
     cin>>n;
 
     arr s(n);
-    cout<<"\nOperations : \n1.Insertion\n2.Deletion\n3.Search\n4.Sort\n5.Display\n6.Exit\n";
+    cout<<"\nOperations : \n1.Insertion\n2.Deletion\n3.Search\n4.Sort\n5.Display\n6.Size\n7.Length\n8.Exit\n";
 
-    while(ch!=6)
+    while(ch!=8)
     {
         cout<<"\nEnter Your Choice : ";
         cin>>ch;
@@ -129,6 +142,14 @@ int main()
             break;
             
             case 6:
+            s.Size();
+            break;
+            
+            case 7:
+            s.Capacity();
+            break;
+            
+            case 8:
             cout<<"\nThank You .......!!!";
             return 0;
             break;
